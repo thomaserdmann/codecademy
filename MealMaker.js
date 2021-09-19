@@ -26,8 +26,8 @@ const menu = {
     
     addDishToCourse(courseName, dishName, dishPrice) { // 2 variabelen komen in het object dish terecht. courseName wordt gebruikt om dish naar de juiste array te pushen.
         const dish = {
-            name: dishName,
-            price: dishPrice,
+            dishName, 
+            dishPrice,
         };
         return this._courses[courseName].push(dish); //push dish naar de property courseName (een array) van het object _courses.
     },
@@ -40,8 +40,8 @@ const menu = {
         const appetizer = this.getRandomDishFromCourse('appetizers')
         const main = this.getRandomDishFromCourse('mains')
         const dessert = this.getRandomDishFromCourse('desserts')
-        const totalPrice = appetizer.price + main.price + dessert.price;
-        return `Your meal is ${appetizer.name}, ${main.name}, and ${dessert.name}, and the total price is ${totalPrice}`;
+        const totalPrice = appetizer.dishPrice + main.dishPrice + dessert.dishPrice;
+        return `Your meal is ${appetizer.dishName}, ${main.dishName}, and ${dessert.dishName}, and the total price is ${totalPrice}`;
     }
 };
 
