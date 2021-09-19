@@ -13,16 +13,6 @@ const menu = {
     },
     get desserts() {
         return this._courses.desserts;
-    },
-    set appetizers(appetizers) {
-        this._courses.appetizers = appetizers;
-    },
-    set mains(mains) {          // de voordelen van set and get ontgaan mij nog even in deze context maar ik kan me voorstellen dat je in de set nog een aantal if statements maakt om input te controleren.
-        this._courses.mains = mains;
-    },
-    set desserts(desserts) {
-        this._courses.desserts = desserts;
-    },
     },                                          //Na wat research is het duidelijk dat de voordelen pas komen zodra je dingen gaat doen in de codeblocks van set en get. In deze context doet het weinig. 
     set appetizers(data){
         this.appetizers = data;
