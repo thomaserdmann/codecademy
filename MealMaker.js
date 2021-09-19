@@ -23,6 +23,17 @@ const menu = {
     set desserts(desserts) {
         this._courses.desserts = desserts;
     },
+    },                                          //Na wat research is het duidelijk dat de voordelen pas komen zodra je dingen gaat doen in de codeblocks van set en get. In deze context doet het weinig. 
+    set appetizers(data){
+        this.appetizers = data;
+      }, 
+      set mains(data){
+        this.mains = data;
+      },
+      set desserts(data){
+        this.desserts = data
+      },
+    
     addDishToCourse(courseName, dishName, dishPrice) { // 2 variabelen komen in het object dish terecht. courseName wordt gebruikt om dish naar de juiste array te pushen.
         const dish = {
             name: dishName,
