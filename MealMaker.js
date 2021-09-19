@@ -46,9 +46,9 @@ const menu = {
 };
 
 // dit is duidelijk, toevoegen van items via de method AddDishToCourse.
-menu.addDishToCourse('appetizers', 'salad', 4.00);
+menu.addDishToCourse('appetizers', 'salad', 4.25);
 menu.addDishToCourse('appetizers', 'wings', 4.50);
-menu.addDishToCourse('appetizers', 'fries', 5.00);
+menu.addDishToCourse('appetizers', 'fries', 5.75);
 
 menu.addDishToCourse('mains', 'chicken', 12.00);
 menu.addDishToCourse('mains', 'steak', 15.50);
@@ -60,6 +60,3 @@ menu.addDishToCourse('desserts', 'chocolate', 4.00);
 
 const meal = menu.generateRandomMeal();
 console.log(meal)
-
-
-
