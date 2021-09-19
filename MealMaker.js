@@ -23,13 +23,6 @@ const menu = {
     set desserts(desserts) {
         this._courses.desserts = desserts;
     },
-    get courses() {             // hier maken we dan het object courses zonder _. Echter gebruiken we m nooit meer. Is dan courses === _courses? 
-        return {
-            appetizers: this.appetizers,
-            mains: this.mains,
-            desserts: this.desserts
-        };
-    },
     addDishToCourse(courseName, dishName, dishPrice) { // 2 variabelen komen in het object dish terecht. courseName wordt gebruikt om dish naar de juiste array te pushen.
         const dish = {
             name: dishName,
