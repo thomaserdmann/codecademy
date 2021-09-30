@@ -85,3 +85,28 @@ const findInvalidCards = array => {
 	return invalidCards;
 };
 
+const idInvalidCardCompanies = array => {
+	companyArray = [];
+	resultArray = [];
+	// Get first digits in array
+	for (cc of array) {
+		companyArray.push(cc[cc.length - 1]);
+	}
+
+	// Check for matching companies and push company name to array
+	if (companyArray.includes(3) === true) {
+		resultArray.push('Amex(American Express)');
+	}
+	if (companyArray.includes(4) === true) {
+		resultArray.push('Visa');
+	}
+	if (companyArray.includes(5) === true) {
+		resultArray.push('Mastercard');
+	}
+	if (companyArray.includes(6) === true) {
+		resultArray.push('Discover');
+	}
+	return resultArray;
+};
+
+console.log('Output = ' + idInvalidCardCompanies(findInvalidCards(batch)));
