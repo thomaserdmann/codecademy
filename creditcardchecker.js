@@ -25,16 +25,38 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 validateCred = array => {
+    let toMultiply = true;
+    let revArr = [];
     let newArr = [];
+
+    // Reverse array
     for (let i = array.length + -1; i >= 0; i--) {
-        newArr.push(array[i]);
+        revArr.push(array[i]);
     }
+    console.log(revArr);
+
+    //Calculate numbers and return array
+    for (i = 1; i < array.length; i++) {
+        if (toMultiply === true) {
+            let value = revArr[i] * 2;
+
+            if (value > 9) {
+                value -= 9;
+            }
+            newArr.push(value);
+            toMultiply = false;
+
+        } else {
+            toMultiply = true;
+            newArr.push(revArr[i]);
+        }
+    }
+    newArr.unshift(revArr[0])
     return newArr;
+};
 
-}
-
-console.log(valid1)
-console.log(validateCred(valid1));
+console.log("Input = " + valid1)
+console.log("Output = " + validateCred(valid1));
 
 
 
