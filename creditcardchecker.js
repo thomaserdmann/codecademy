@@ -33,7 +33,6 @@ validateCred = array => {
     for (let i = array.length + -1; i >= 0; i--) {
         revArr.push(array[i]);
     }
-    console.log(revArr);
 
     //Calculate numbers and return array
     for (i = 1; i < array.length; i++) {
@@ -63,8 +62,20 @@ validateCred = array => {
 
 };
 
-console.log("Input = " + valid1)
-console.log("Output = " + validateCred(valid1));
+const findInvalidCards = array => {
+    let invalidCards = [];
+    for (cc of array) {
+        // validateCred(cc)
+        if (validateCred(cc) === false) {
+            console.log('false card')
+            invalidCards.push(cc);
+            console.log(invalidCards)
+        }
+    }
+    return invalidCards;
+}
+console.log(batch)
+console.log("Output = " + findInvalidCards(batch));
 
 
 
