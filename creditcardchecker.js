@@ -39,7 +39,7 @@ const batch = [
 ];
 
 // Add your functions below:
-validateCred = (array) => {
+validateCred = array => {
 	let toMultiply = true;
 	let revArr = [];
 	let newArr = [];
@@ -75,19 +75,13 @@ validateCred = (array) => {
 	}
 };
 // Check for invalid cards and return array
-const findInvalidCards = (array) => {
+const findInvalidCards = array => {
 	let invalidCards = [];
 	for (cc of array) {
 		if (validateCred(cc) === false) {
-			console.log('false card');
 			invalidCards.push(cc);
-			// console.log(Array.isArray(cc));
 		}
 	}
 	return invalidCards;
 };
 
-console.log(batch);
-console.log('Output = ' + findInvalidCards(batch));
-test = findInvalidCards(batch);
-console.log(test);
