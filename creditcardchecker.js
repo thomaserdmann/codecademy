@@ -51,8 +51,16 @@ validateCred = array => {
             newArr.push(revArr[i]);
         }
     }
-    newArr.unshift(revArr[0])
-    return newArr;
+    newArr.unshift(revArr[0]);
+    const reducer = (accumulator, curr) => accumulator + curr;
+    calculatedSum = newArr.reduce(reducer) % 10;
+
+    if (calculatedSum === 0) {
+        return true;
+    } else {
+        return false;
+    }
+
 };
 
 console.log("Input = " + valid1)
