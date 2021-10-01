@@ -32,6 +32,18 @@ const pAequorFactory = (specimenNum, dna) => {
 			dna.splice(randomBase, 1, newBase);
 			return dna;
 		},
+
+		compareDNA(inputObject) {
+			let compareCounter = 0;
+			for (i = 0; i < dna.length; i++) {
+				if (dna[i] === inputObject.dna[i]) {
+					compareCounter += 1;
+				}
+			}
+			return `Specimen ${specimenNum} and Specimen ${inputObject.specimenNum} have ${Math.floor(
+				(compareCounter / 15) * 100
+			)}% in common`;
+		},
 	};
 };
 
@@ -39,5 +51,13 @@ const pAequorFactory = (specimenNum, dna) => {
 testNumber = 1;
 testStrand = ['G', 'C', 'G', 'T', 'C', 'T', 'C', 'G', 'T', 'C', 'A', 'A', 'A', 'T', 'A'];
 testObject = pAequorFactory(testNumber, testStrand);
-console.log(testObject.dna);
-console.log(testObject.mutate());
+
+testNumber2 = 2;
+testStrand2 = ['G', 'G', 'G', 'A', 'A', 'C', 'A', 'T', 'T', 'C', 'C', 'G', 'G', 'A', 'A'];
+testObject2 = pAequorFactory(testNumber2, testStrand2);
+
+testNumber3 = 3;
+testStrand3 = ['G', 'G', 'G', 'A', 'A', 'C', 'A', 'T', 'T', 'C', 'C', 'G', 'G', 'A', 'A'];
+testObject3 = pAequorFactory(testNumber3, testStrand3);
+
+console.log(testObject2.compareDNA(testObject3));
