@@ -78,7 +78,7 @@ validateCred = array => {
 const findInvalidCards = array => {
 	let invalidCards = [];
 	for (cc of array) {
-		if (validateCred(cc) === false) {
+		if (!validateCred(cc)) {
 			invalidCards.push(cc);
 		}
 	}
@@ -94,16 +94,16 @@ const idInvalidCardCompanies = array => {
 	}
 
 	// Check for matching companies and push company name to array
-	if (firstDigitArray.includes(3) === true) {
+	if (firstDigitArray.includes(3)) {
 		resultArray.push('Amex(American Express)');
 	}
-	if (firstDigitArray.includes(4) === true) {
+	if (firstDigitArray.includes(4)) {
 		resultArray.push('Visa');
 	}
-	if (firstDigitArray.includes(5) === true) {
+	if (firstDigitArray.includes(5)) {
 		resultArray.push('Mastercard');
 	}
-	if (firstDigitArray.includes(6) === true) {
+	if (firstDigitArray.includes(6)) {
 		resultArray.push('Discover');
 	}
 	return resultArray;
