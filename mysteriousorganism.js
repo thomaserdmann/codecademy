@@ -40,9 +40,7 @@ const pAequorFactory = (specimenNum, dna) => {
 					compareCounter += 1;
 				}
 			}
-			return `Specimen ${specimenNum} and Specimen ${inputObject.specimenNum} have ${Math.floor(
-				(compareCounter / 15) * 100
-			)}% in common`;
+			return Math.floor((compareCounter / dna.length) * 100);
 		},
 
 		willLikelySurvive() {
