@@ -90,6 +90,25 @@ const createDatabase = factoryAmount => {
 	}
 	return strandArray;
 };
+// same goes here: if j = i then bug...
+const findBestMatch = testDatabase => {
+	let match1 = 0;
+	let match2 = 0;
+	let highestMatch = 0;
+
+	for (strand of testDatabase) {
+		for (j = testDatabase.indexOf(strand) + 1; j < testDatabase.length; j++) {
+			let match = strand.compareDNA(testDatabase[j]);
+
+			if (match > highestMatch) {
+				match1 = strand.specimenNum;
+				match2 = testDatabase[j].specimenNum;
+				highestMatch = match;
+			}
+		}
+	}
+	return `Element ${match1} and element ${match2} have the highest match of ${highestMatch}%`;
+};
 
 //Test functionfactory
 testNumber = 1;
@@ -104,5 +123,23 @@ testNumber3 = 3;
 testStrand3 = ['G', 'G', 'G', 'A', 'A', 'C', 'A', 'T', 'T', 'C', 'C', 'G', 'G', 'A', 'A'];
 testObject3 = pAequorFactory(testNumber3, testStrand3);
 
-console.log(testObject.dna);
-console.log(testObject.complementStrand());
+testDatabase = createDatabase(5);
+console.log(findBestMatch(testDatabase));
+console.log(testDatabase);
+console.log(testDatabase[0].compareDNA(testDatabase[1]));
+console.log(testDatabase[0].compareDNA(testDatabase[2]));
+console.log(testDatabase[0].compareDNA(testDatabase[3]));
+console.log(testDatabase[0].compareDNA(testDatabase[4]));
+console.log(testDatabase[1].compareDNA(testDatabase[2]));
+console.log(testDatabase[1].compareDNA(testDatabase[3]));
+console.log(testDatabase[1].compareDNA(testDatabase[4]));
+console.log(testDatabase[2].compareDNA(testDatabase[3]));
+console.log(testDatabase[2].compareDNA(testDatabase[4]));
+console.log(testDatabase[3].compareDNA(testDatabase[4]));
+
+// console.log(testDatabase[3].compareDNA(testDatabase[0])); //
+// console.log(testDatabase[3].compareDNA(testDatabase[1])); //
+// console.log(testDatabase[3].compareDNA(testDatabase[2])); //
+// console.log(testDatabase[2].compareDNA(testDatabase[0])); //
+// console.log(testDatabase[2].compareDNA(testDatabase[1])); //
+// console.log(testDatabase[1].compareDNA(testDatabase[0])); //
