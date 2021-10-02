@@ -112,6 +112,7 @@ const findBestMatch = testDatabase => {
 			}
 		}
 	}
+
 	if (matchCount == 1) {
 		return `Element ${match1} and element ${match2} have the highest match of ${highestMatch}%`;
 	} else return `Error: ${matchCount} elements with highest match of ${highestMatch}%`;
@@ -131,23 +132,5 @@ testStrand3 = ['G', 'G', 'G', 'A', 'A', 'C', 'A', 'T', 'T', 'C', 'C', 'G', 'G', 
 testObject3 = pAequorFactory(testNumber3, testStrand3);
 
 testDatabase = createDatabase(500);
-// console.log(testDatabase);
-console.log(testDatabase[0].compareDNA(testDatabase[1]));
-console.log(testDatabase[0].compareDNA(testDatabase[2]));
-console.log(testDatabase[0].compareDNA(testDatabase[3]));
-console.log(testDatabase[0].compareDNA(testDatabase[4]));
-console.log(testDatabase[1].compareDNA(testDatabase[2]));
-console.log(testDatabase[1].compareDNA(testDatabase[3]));
-console.log(testDatabase[1].compareDNA(testDatabase[4]));
-console.log(testDatabase[2].compareDNA(testDatabase[3]));
-console.log(testDatabase[2].compareDNA(testDatabase[4]));
-console.log(testDatabase[3].compareDNA(testDatabase[4]));
-
 console.log(findBestMatch(testDatabase));
 
-// console.log(testDatabase[3].compareDNA(testDatabase[0])); //
-// console.log(testDatabase[3].compareDNA(testDatabase[1])); //
-// console.log(testDatabase[3].compareDNA(testDatabase[2])); //
-// console.log(testDatabase[2].compareDNA(testDatabase[0])); //
-// console.log(testDatabase[2].compareDNA(testDatabase[1])); //
-// console.log(testDatabase[1].compareDNA(testDatabase[0])); //
