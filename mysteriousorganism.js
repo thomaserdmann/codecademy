@@ -59,20 +59,20 @@ const pAequorFactory = (specimenNum, dna) => {
 	};
 };
 
-// This should be a function in real life. 
-const studyDatabase = [];
-const factoryAmount = 30;
-let strandID = 1;
-
-// if j = i then bug...
-for (j = 0; j < factoryAmount; j++) {
-	let newStrand = pAequorFactory(strandID, mockUpStrand());
-	do {
-		newStrand.mutate();
-	} while (newStrand.willLikelySurvive() === false);
-	strandID += 1;
-	studyDatabase.push(newStrand);
-}
+const createDatabase = factoryAmount => {
+	const strandArray = [];
+	let strandID = 1;
+	// if j = i then bug...
+	for (j = 0; j < factoryAmount; j++) {
+		let newStrand = pAequorFactory(strandID, mockUpStrand());
+		do {
+			newStrand.mutate();
+		} while (newStrand.willLikelySurvive() === false);
+		strandID += 1;
+		strandArray.push(newStrand);
+	}
+	return strandArray;
+};
 
 //Test functionfactory
 testNumber = 1;
@@ -87,6 +87,7 @@ testNumber3 = 3;
 testStrand3 = ['G', 'G', 'G', 'A', 'A', 'C', 'A', 'T', 'T', 'C', 'C', 'G', 'G', 'A', 'A'];
 testObject3 = pAequorFactory(testNumber3, testStrand3);
 
+studyDatabase = createDatabase(30);
 console.log(studyDatabase);
 console.log(studyDatabase[0].willLikelySurvive());
 console.log(studyDatabase[12].willLikelySurvive());
