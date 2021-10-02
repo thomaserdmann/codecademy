@@ -56,6 +56,25 @@ const pAequorFactory = (specimenNum, dna) => {
 				return true;
 			} else return false;
 		},
+
+		complementStrand() {
+			let complementingStrand = [];
+			for (i = 0; i < dna.length; i++) {
+				if (dna[i] === 'A') {
+					complementingStrand.push('T');
+				}
+				if (dna[i] === 'T') {
+					complementingStrand.push('A');
+				}
+				if (dna[i] === 'C') {
+					complementingStrand.push('G');
+				}
+				if (dna[i] === 'G') {
+					complementingStrand.push('C');
+				}
+			}
+			return complementingStrand;
+		},
 	};
 };
 
@@ -87,8 +106,5 @@ testNumber3 = 3;
 testStrand3 = ['G', 'G', 'G', 'A', 'A', 'C', 'A', 'T', 'T', 'C', 'C', 'G', 'G', 'A', 'A'];
 testObject3 = pAequorFactory(testNumber3, testStrand3);
 
-studyDatabase = createDatabase(30);
-console.log(studyDatabase);
-console.log(studyDatabase[0].willLikelySurvive());
-console.log(studyDatabase[12].willLikelySurvive());
-console.log(studyDatabase[24].willLikelySurvive());
+console.log(testObject.dna);
+console.log(testObject.complementStrand());
