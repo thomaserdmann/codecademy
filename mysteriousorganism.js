@@ -44,12 +44,24 @@ const pAequorFactory = (specimenNum, dna) => {
 				(compareCounter / 15) * 100
 			)}% in common`;
 		},
+
+		willLikelySurvive() {
+			let surviveCounter = 0;
+			for (i = 0; i < dna.length; i++) {
+				if (dna[i] === 'C' || dna[i] === 'G') {
+					surviveCounter += 1;
+				}
+			}
+			if (surviveCounter >= 9) {
+				return true;
+			} else return false;
+		},
 	};
 };
 
 //Test functionfactory
 testNumber = 1;
-testStrand = ['G', 'C', 'G', 'T', 'C', 'T', 'C', 'G', 'T', 'C', 'A', 'A', 'A', 'T', 'A'];
+testStrand = ['G', 'C', 'G', 'T', 'C', 'T', 'C', 'G', 'T', 'C', 'C', 'C', 'G', 'T', 'A'];
 testObject = pAequorFactory(testNumber, testStrand);
 
 testNumber2 = 2;
@@ -60,4 +72,4 @@ testNumber3 = 3;
 testStrand3 = ['G', 'G', 'G', 'A', 'A', 'C', 'A', 'T', 'T', 'C', 'C', 'G', 'G', 'A', 'A'];
 testObject3 = pAequorFactory(testNumber3, testStrand3);
 
-console.log(testObject2.compareDNA(testObject3));
+console.log(testObject.willLikelySurvive());
