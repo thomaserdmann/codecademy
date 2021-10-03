@@ -50,7 +50,7 @@ const pAequorFactory = (specimenNum, dna) => {
 					surviveCounter += 1;
 				}
 			}
-			if (surviveCounter >= 9) {
+			if (surviveCounter >= dna.length * 0.6) {
 				return true;
 			} else return false;
 		},
@@ -131,4 +131,3 @@ testObject3 = pAequorFactory(testNumber3, testStrand3);
 
 testDatabase = createDatabase(500);
 console.log(findBestMatch(testDatabase));
-
