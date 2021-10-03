@@ -50,9 +50,11 @@ const pAequorFactory = (specimenNum, dna) => {
 					surviveCounter += 1;
 				}
 			}
-			if (surviveCounter >= dna.length * 0.6) {
-				return true;
-			} else return false;
+			return (Math.floor(surviveCounter * 100 / dna.length) >= 60);
+		},
+
+		setDNA(strand) {
+			dna = strand;
 		},
 
 		complementStrand() {
@@ -82,7 +84,7 @@ const createDatabase = factoryAmount => {
 	for (let i = 0; i < factoryAmount; i++) {
 		let newStrand = pAequorFactory(strandID, mockUpStrand());
 		do {
-			newStrand.mutate();
+			newStrand.setDNA(mockUpStrand());
 		} while (newStrand.willLikelySurvive() === false);
 		strandID += 1;
 		strandArray.push(newStrand);
