@@ -35,7 +35,7 @@ const pAequorFactory = (specimenNum, dna) => {
 
 		compareDNA(inputObject) {
 			let compareCounter = 0;
-			for (i = 0; i < dna.length; i++) {
+			for (let i = 0; i < dna.length; i++) {
 				if (dna[i] === inputObject.dna[i]) {
 					compareCounter += 1;
 				}
@@ -45,7 +45,7 @@ const pAequorFactory = (specimenNum, dna) => {
 
 		willLikelySurvive() {
 			let surviveCounter = 0;
-			for (i = 0; i < dna.length; i++) {
+			for (let i = 0; i < dna.length; i++) {
 				if (dna[i] === 'C' || dna[i] === 'G') {
 					surviveCounter += 1;
 				}
@@ -57,7 +57,7 @@ const pAequorFactory = (specimenNum, dna) => {
 
 		complementStrand() {
 			let complementingStrand = [];
-			for (i = 0; i < dna.length; i++) {
+			for (let i = 0; i < dna.length; i++) {
 				if (dna[i] === 'A') {
 					complementingStrand.push('T');
 				}
@@ -79,8 +79,7 @@ const pAequorFactory = (specimenNum, dna) => {
 const createDatabase = factoryAmount => {
 	const strandArray = [];
 	let strandID = 1;
-	// if j = i then bug...
-	for (j = 0; j < factoryAmount; j++) {
+	for (let i = 0; i < factoryAmount; i++) {
 		let newStrand = pAequorFactory(strandID, mockUpStrand());
 		do {
 			newStrand.mutate();
@@ -90,7 +89,6 @@ const createDatabase = factoryAmount => {
 	}
 	return strandArray;
 };
-// same goes here: if j = i then bug...
 const findBestMatch = testDatabase => {
 	let match1 = 0;
 	let match2 = 0;
@@ -98,15 +96,15 @@ const findBestMatch = testDatabase => {
 	let matchCount = 0;
 
 	for (strand of testDatabase) {
-		for (j = testDatabase.indexOf(strand) + 1; j < testDatabase.length; j++) {
-			let match = strand.compareDNA(testDatabase[j]);
+		for (let i = testDatabase.indexOf(strand) + 1; i < testDatabase.length; i++) {
+			let match = strand.compareDNA(testDatabase[i]);
 
 			if (match == highestMatch) {
 				matchCount += 1;
 			}
 			if (match > highestMatch) {
 				match1 = strand.specimenNum;
-				match2 = testDatabase[j].specimenNum;
+				match2 = testDatabase[i].specimenNum;
 				highestMatch = match;
 				matchCount = 1;
 			}
