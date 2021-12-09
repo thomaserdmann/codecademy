@@ -16,7 +16,7 @@ window.onload = () => {
 	}, 1000);
 
 	let backgroundFunction = () => {
-		document.getElementById('window').style.backgroundColor = 'blue';
+		document.body.style.backgroundColor = 'blue';
 		prompt('test');
 	};
 
