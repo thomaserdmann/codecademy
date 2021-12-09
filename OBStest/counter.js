@@ -15,12 +15,11 @@ window.onload = () => {
 		document.getElementById('budget').innerHTML = `This meeting is costing &euro; ${budget.toFixed(2)}`;
 	}, 1000);
 
-	const reset = document.getElementById('reset');
-	reset.addEventListener('click', backgroundFunction);
-
 	let backgroundFunction = () => {
 		document.getElementById('window').style.backgroundColor = 'blue';
 		prompt('test');
 	};
 
+	const reset = document.getElementById('reset');
+	reset.addEventListener('click', backgroundFunction);
 }
