@@ -1,5 +1,7 @@
 window.onload = () => {
 	let budget = 0;
+	let budgetCounter;
+
 	const secondRate = hourRate => {
 		return hourRate / 3600;
 	};
@@ -9,10 +11,12 @@ window.onload = () => {
 		budget = 0;
 	};
 
-	let budgetCounter = setInterval(() => {
-		budget += secondRate(100);
-		document.getElementById('budget').innerHTML = `This meeting is costing &euro; ${budget.toFixed(2)}`;
-	}, 1000);
+	const setBudgetCounter = () => {
+		budgetCounter = setInterval(() => {
+			budget += secondRate(100);
+			document.getElementById('budget').innerHTML = `This meeting is costing &euro; ${budget.toFixed(2)}`;
+		}, 1000);
+	}
 
 	let backgroundFunction = () => {
 		document.body.style.backgroundColor = 'blue';
@@ -21,4 +25,6 @@ window.onload = () => {
 
 	const reset = document.getElementById('reset');
 	reset.addEventListener('click', backgroundFunction);
+
+	setBudgetCounter();
 }
