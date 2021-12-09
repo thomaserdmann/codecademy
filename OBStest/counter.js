@@ -1,23 +1,26 @@
-let budget = 0;
-const secondRate = hourRate => {
-	return hourRate / 3600;
-};
+window.onload = () => {
+	let budget = 0;
+	const secondRate = hourRate => {
+		return hourRate / 3600;
+	};
 
-let resetCounter = () => {
-	console.log('Hello Test');
-	clearInterval(budgetCounter);
-	budget = 0;
-};
+	let resetCounter = () => {
+		console.log('Hello Test');
+		clearInterval(budgetCounter);
+		budget = 0;
+	};
 
-let budgetCounter = setInterval(() => {
-	budget += secondRate(100);
-	document.getElementById('budget').innerHTML = `This meeting is costing &euro; ${budget.toFixed(2)}`;
-}, 1000);
+	let budgetCounter = setInterval(() => {
+		budget += secondRate(100);
+		document.getElementById('budget').innerHTML = `This meeting is costing &euro; ${budget.toFixed(2)}`;
+	}, 1000);
 
-const reset = document.getElementById('reset');
-reset.addEventListener('click', backgroundFunction);
+	const reset = document.getElementById('reset');
+	reset.addEventListener('click', backgroundFunction);
 
-let backgroundFunction = () => {
-	document.getElementById('window').style.backgroundColor = 'blue';
-	prompt('test');
-};
+	let backgroundFunction = () => {
+		document.getElementById('window').style.backgroundColor = 'blue';
+		prompt('test');
+	};
+
+}
