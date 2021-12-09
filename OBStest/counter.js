@@ -6,7 +6,6 @@ window.onload = () => {
 
 	let resetCounter = () => {
 		console.log('Hello Test');
-		clearInterval(budgetCounter);
 		budget = 0;
 	};
 
