@@ -11,7 +11,7 @@ let resetCounter = () => {
 
 let budgetCounter = setInterval(() => {
 	budget += secondRate(100);
-	document.getElementById('budget').textContent = `This meeting is costing € ${budget.toFixed(2)}`;
+	document.getElementById('budget').innerHTML = `This meeting is costing &euro; ${budget.toFixed(2)}`;
 }, 1000);
 
 const reset = document.getElementById('reset');
