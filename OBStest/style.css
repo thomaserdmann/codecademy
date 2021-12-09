@@ -1,0 +1,16 @@
+body {
+	background-color: gray;
+}
+h1 {
+	color: white;
+}
+.window {
+	width: 500;
+	color: white;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 20px;
+	text-align: center;
+}
+.important{
+	color: red
+}
