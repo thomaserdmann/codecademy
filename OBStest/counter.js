@@ -9,6 +9,8 @@ window.onload = () => {
 	let resetCounter = () => {
 		console.log('Hello Test');
 		budget = 0;
+		clearInterval(budgetCounter);
+		setBudgetCounter();
 	};
 
 	const setBudgetCounter = () => {
