@@ -8,8 +8,7 @@ window.onload = () => {
 
 	let resetCounter = () => {
 		console.log('Hello Test');
-		budget = 0;
-		clearInterval(budgetCounter);
+		resetBudgetCounter();
 		setBudgetCounter();
 	};
 
@@ -18,6 +17,11 @@ window.onload = () => {
 			budget += secondRate(100);
 			document.getElementById('budget').innerHTML = `This meeting is costing &euro; ${budget.toFixed(2)}`;
 		}, 1000);
+	}
+
+	const resetBudgetCounter = () => {
+		budget = 0;
+		clearInterval(budgetCounter);
 	}
 
 	let backgroundFunction = () => {
