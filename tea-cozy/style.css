@@ -19,7 +19,7 @@ header {
 }
 a {
 	color: seashell;
-	margin: 0 10px;;
+	margin: 0 10px;
 }
 #logo {
 	height: 50px;
@@ -40,6 +40,9 @@ nav {
 .mission {
 	background-color: black;
 	width: 100%;
+}
+.mission h4{
+	margin: 10px;
 }
 .products {
 	width: 1000px;
@@ -63,8 +66,9 @@ nav {
 .products figcaption {
 	margin-top: 10px;
 }
-.products h2 h4{
-	margin: 0;
+.products h2,
+.products h4 {
+	margin: 10px;
 }
 
 .locations {
@@ -93,7 +97,6 @@ nav {
 .contact {
 	height: 200px;
 }
-/* Niet helemaal duidelijk waarom deze override nodig is.  */
 .contact h2 {
 	margin: 10px;
 }
