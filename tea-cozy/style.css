@@ -29,10 +29,6 @@ nav {
 	justify-content: right;
 	margin-right: 20px;
 }
-/* nav ul li{
-	display: inline-flex;
-	padding: 10px;
-} */
 .jumbotron {
 	background-image: url('/images/img-mission-background.jpg');
 	height: 700px;
