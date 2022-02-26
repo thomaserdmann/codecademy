@@ -19,6 +19,7 @@ header {
 }
 a {
 	color: seashell;
+	margin: 0 10px;;
 }
 #logo {
 	height: 50px;
