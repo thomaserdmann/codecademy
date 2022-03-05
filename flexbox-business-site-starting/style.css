@@ -1,0 +1,173 @@
+body {
+	background-color: #263140;
+	color: white;
+	margin: 0;
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+	margin: 0.5rem 1rem;
+	font-size: 2rem;
+}
+
+h2 {
+	margin: 0;
+}
+
+h5{
+    font-weight: 200;
+}
+
+header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 18px;
+	padding: 5px;
+	border-bottom: 1px #b4b8ab solid;
+}
+
+header img {
+	height: 50px;
+	margin-left: 10px;
+}
+
+header ul {
+	list-style-type: none;
+	display: flex;
+	margin-right: 10px;
+}
+
+header li {
+	display: inline-block;
+	margin: 0 2rem;
+	/* border: 0.5px #b4b8ab solid; */
+	padding: 5px 5px;
+}
+
+header a {
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.hero {
+	background-image: url(/images/hero.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 700px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-container {
+	background-color: rgba(38, 49, 64, 0.75);
+	border-radius: 25px;
+	width: 40%;
+	max-height: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 1rem;
+	overflow: hidden;
+}
+
+.hero-container img {
+	max-width: 60%;
+	margin: 10px;
+	object-fit: contain;
+}
+
+.hero-container p {
+	width: 60%;
+}
+
+.hero button {
+	background-color: #bf4e30;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 0.5rem 20%;
+	margin: 10px 0;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.about {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid white;
+	padding: 3rem;
+}
+
+.about .container {
+	display: flex;
+	gap: 3rem;
+	justify-content: space-around;
+	width: 50%;
+	margin: 2rem 0;
+	padding: 1rem;
+}
+
+.about-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: left;
+	/* background-color: green; */
+}
+.about img {
+	width: 50%;
+	border: 3px solid white;
+	object-fit: cover;
+}
+
+.about ul,
+.about li {
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+
+.team {
+	background-image: url(/images/team.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+    backdrop-filter: blur(5px);
+}
+.overlay {
+	background-color: rgba(38, 49, 64, 0.75);
+	background-color: rgba(191, 78, 48, 0.4);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 4rem;
+}
+
+.team-container {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.team img {
+	width: 30%;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	object-position: top;
+	border: 2px solid white;
+	border-radius: 50%;
+}
+
+.team a {
+	color: white;
+	text-decoration: none;
+}
