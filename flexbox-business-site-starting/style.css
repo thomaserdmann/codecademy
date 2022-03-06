@@ -15,8 +15,8 @@ h2 {
 	margin: 0;
 }
 
-h5{
-    font-weight: 200;
+h5 {
+	font-weight: 200;
 }
 
 header {
@@ -27,6 +27,8 @@ header {
 	font-size: 18px;
 	padding: 5px;
 	border-bottom: 1px #b4b8ab solid;
+	position: fixed;
+	background-color: #263140;
 }
 
 header img {
@@ -55,7 +57,7 @@ header a {
 }
 
 .hero {
-	background-image: url(/images/hero.jpg);
+	background-image: url('./images/hero.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -76,6 +78,7 @@ header a {
 	justify-content: space-around;
 	padding: 1rem;
 	overflow: hidden;
+	margin-top: 80px;
 }
 
 .hero-container img {
@@ -102,7 +105,7 @@ header a {
 .about {
 	display: flex;
 	justify-content: center;
-	border-bottom: 1px solid white;
+	/* border-bottom: 1px solid white; */
 	padding: 3rem;
 }
 
@@ -136,11 +139,10 @@ header a {
 }
 
 .team {
-	background-image: url(/images/team.jpg);
+	background-image: url('./images/team.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-    backdrop-filter: blur(5px);
 }
 .overlay {
 	background-color: rgba(38, 49, 64, 0.75);
