@@ -265,7 +265,7 @@ nav li {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	/* padding: 1rem 0 */
+	padding: 1rem 0
 }
 .testimonial-container {
 	/* background-color: purple; */
