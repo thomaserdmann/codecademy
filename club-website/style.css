@@ -110,6 +110,32 @@ a {
 	text-decoration: none;
 }
 
+h2 {
+	font-size: 2rem;
+}
+
+button {
+	background: #e63946ff;
+	border: 1px solid #e63946ff;
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 1.5rem;
+	font-weight: 800;
+	padding: 0.05rem 1rem;
+}
+
+button:hover,
+button:active {
+	background-color: #ffebe7;
+	color: #ff4742;
+}
+
+button:active {
+	opacity: 0.5;
+}
+
 /* Header */
 header {
 	background-color: #1d3557ff;
@@ -126,6 +152,8 @@ header {
 
 header h1 {
 	margin-left: 2rem;
+    font-weight: 900;
+    font-size: 2.5rem;
 }
 
 nav li {
@@ -167,28 +195,6 @@ nav li {
 	margin: 1rem 0;
 }
 
-.hero button {
-	background: #e63946ff;
-	border: 1px solid #e63946ff;
-	border-radius: 6px;
-	box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-	color: #ffffff;
-	cursor: pointer;
-	font-size: 1.5rem;
-	font-weight: 800;
-	padding: 0.05rem 1rem;
-}
-
-.hero button:hover,
-.hero button:active {
-	background-color: #ffebe7;
-	color: #ff4742;
-}
-
-.hero button:active {
-	opacity: 0.5;
-}
-
 /* Tastings */
 
 .tastings {
@@ -197,7 +203,7 @@ nav li {
 	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
-	margin: 1rem;
+	margin: 1rem 1rem 2rem 1rem;
 }
 
 .tastings-container {
@@ -209,8 +215,6 @@ nav li {
 	padding: 0.5rem;
 	width: 100%;
 }
-
-
 
 .tasting-block {
 	min-width: 300px;
@@ -255,12 +259,13 @@ nav li {
 .testimonial {
 	background-color: #ffebe7;
 	color: rgba(230, 57, 70, 1);
-	min-height: 15rem;
+	min-height: 16rem;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	/* padding: 1rem 0 */
 }
 .testimonial-container {
 	/* background-color: purple; */
@@ -278,6 +283,54 @@ nav li {
 
 .testimonial h4 {
 	margin: 0 1rem;
+}
+
+/* Event */
+
+.event {
+	background-image: url('./images/diner.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 30rem;
+    padding: 1rem 0;
+}
+
+.event-container {
+	background-color: rgba(29, 53, 87, 0.9);
+	max-width: 30%;
+	border-radius: 15px;
+	padding: 2rem;
+	margin: 3rem 3rem 1rem 3rem;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.event p {
+	text-align: left;
+}
+
+.event img {
+	width: 20%;
+	order: -1;
+	margin: 1rem;
+}
+
+.event button {
+	width: 30%;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+	padding: 1rem;
+    border-bottom: 15px solid #ffebe7;
 }
 
 /* Media Query */
