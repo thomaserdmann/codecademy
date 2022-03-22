@@ -45,16 +45,20 @@ class Media {
 		return this._ratings;
 	}
 
+	set isCheckedOut(value){
+		this._isCheckedOut = value;
+	}
+
 	getAverageRating() {
 		return this._ratings.reduce((previousValue, currentValue) => previousValue + currentValue) / this._ratings.length;
 	}
 
 	toggleCheckOutStatus() {
-		this._isCheckedOut = !this._isCheckedOut;
+		this.isCheckedOut = !this.isCheckedOut;
 	}
 
 	addRating(rating) {
-		this._ratings.push(rating);
+		this.ratings.push(rating);
 	}
 }
 
@@ -66,6 +70,10 @@ class Book extends Media {
 
 	get author() {
 		return this._name;
+	}
+
+	get pages(){
+		return this._pages;
 	}
 }
 
