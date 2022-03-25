@@ -45,6 +45,24 @@ class ShiftCipher {
 		}
 		return this._cipherArray.join('');
 	}
+
+	decrypt(string) {
+		this._cipherArray = [];
+		for (let i = 0; i < string.length; i++) {
+			let j = string.toUpperCase().charCodeAt(i);
+
+			if (j >= 65 && j <= 90) {
+				this._shiftResult = j - this._shift;
+				if (this._shiftResult < 65) {
+					this._shiftResult += 26;
+				}
+				this._cipherArray.push(String.fromCharCode(this._shiftResult));
+			} else {
+				this._cipherArray.push(String.fromCharCode(j));
+			}
+		}
+		return this._cipherArray.join('').toLocaleLowerCase();
+	}
 }
 
 const cipher = new ShiftCipher(2);
