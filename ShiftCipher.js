@@ -13,8 +13,6 @@
 // cipher.decrypt('K <3 OA RWRRA'); // returns 'i <3 my puppy'
 // Feel free to reference the Unicode Table as well as the JavaScript String methods including: toUpperCase(), toLowerCase(), charCodeAt() and fromCharCode()
 
-
-
 class ShiftCipher {
 	constructor(shift) {
 		this._shift = shift;
@@ -30,13 +28,13 @@ class ShiftCipher {
 	}
 
 	encrypt(string) {
+		this._cipherArray = [];
 		for (let i = 0; i < string.length; i++) {
 			let j = string.toUpperCase().charCodeAt(i);
-
 			if (j >= 65 && j <= 90) {
 				this._shiftResult = j + this._shift;
-				if (this._shiftResult >= 90) {
-					this._shiftResult = 64 + this._shift;
+				if (this._shiftResult >= 91) {
+					this._shiftResult = 64 + (this._shift - (90 - j));
 				}
 				this._cipherArray.push(String.fromCharCode(this._shiftResult));
 			} else {
@@ -65,5 +63,6 @@ class ShiftCipher {
 	}
 }
 
-const cipher = new ShiftCipher(2);
-console.log(cipher.encrypt('I love to code!'));
+const cipher = new ShiftCipher(1);
+console.log(cipher.encrypt('z'));
+console.log(cipher.decrypt('ABCDEFG'));
