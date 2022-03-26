@@ -30,15 +30,15 @@ class ShiftCipher {
 		let cipherArray = [];
 		for (let i = 0; i < string.length; i++) {
 			let j = string.toUpperCase().charCodeAt(i);
+			this._shiftResult = j;
+
 			if (j >= 65 && j <= 90) {
-				this._shiftResult = j + this._shift;
+				this._shiftResult += this._shift;
 				if (this._shiftResult >= 91) {
 					this._shiftResult = 64 + (this._shift - (90 - j));
 				}
-				cipherArray.push(String.fromCharCode(this._shiftResult));
-			} else {
-				cipherArray.push(String.fromCharCode(j));
 			}
+			cipherArray.push(String.fromCharCode(this._shiftResult));
 		}
 		return cipherArray.join('');
 	}
@@ -47,16 +47,15 @@ class ShiftCipher {
 		let cipherArray = [];
 		for (let i = 0; i < string.length; i++) {
 			let j = string.toUpperCase().charCodeAt(i);
+			this._shiftResult = j;
 
 			if (j >= 65 && j <= 90) {
-				this._shiftResult = j - this._shift;
+				this._shiftResult -= this._shift;
 				if (this._shiftResult < 65) {
 					this._shiftResult += 26;
 				}
-				cipherArray.push(String.fromCharCode(this._shiftResult));
-			} else {
-				cipherArray.push(String.fromCharCode(j));
 			}
+			cipherArray.push(String.fromCharCode(this._shiftResult));
 		}
 		return cipherArray.join('').toLocaleLowerCase();
 	}
