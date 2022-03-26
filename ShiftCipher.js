@@ -14,32 +14,50 @@
 // Feel free to reference the Unicode Table as well as the JavaScript String methods including: toUpperCase(), toLowerCase(), charCodeAt() and fromCharCode()
 
 class ShiftCipher {
-	constructor(shift) {
-		this._shift = shift;
+	constructor(shiftValue) {
+		this._shiftValue = shiftValue;
 	}
 
-	get shift() {
-		return this._shift;
+	get shiftValue() {
+		return this._shiftValue;
 	}
 
-	set shift(shift) {
-		this._shift = shift;
+	set shiftValue(shiftValue) {
+		this._shiftValue = shiftValue;
+	}
+
+	shift(j, encrypt) {
+		this._shiftResult = j;
+		this._encrypt = encrypt;
+
+		if (this._encrypt && j >= 65 && j <= 90) {
+			this._shiftResult += this.shiftValue;
+
+			if (this._shiftResult >= 91) {
+				this._shiftResult = 64 + (this.shiftValue - (90 - j));
+			}
+		}
+
+		if (this._encrypt === false && j >= 65 && j <= 90) {
+			this._shiftResult -= this.shiftValue;
+			if (this._shiftResult < 65) {
+				this._shiftResult += 26;
+			}
+		}
+
+		return this._shiftResult;
 	}
 
 	encrypt(string) {
 		let cipherArray = [];
 		for (let i = 0; i < string.length; i++) {
 			let j = string.toUpperCase().charCodeAt(i);
-			this._shiftResult = j;
 
-			if (j >= 65 && j <= 90) {
-				this._shiftResult += this._shift;
-				if (this._shiftResult >= 91) {
-					this._shiftResult = 64 + (this._shift - (90 - j));
-				}
-			}
+			this.shift(j, true);
+
 			cipherArray.push(String.fromCharCode(this._shiftResult));
 		}
+
 		return cipherArray.join('');
 	}
 
@@ -47,20 +65,15 @@ class ShiftCipher {
 		let cipherArray = [];
 		for (let i = 0; i < string.length; i++) {
 			let j = string.toUpperCase().charCodeAt(i);
-			this._shiftResult = j;
 
-			if (j >= 65 && j <= 90) {
-				this._shiftResult -= this._shift;
-				if (this._shiftResult < 65) {
-					this._shiftResult += 26;
-				}
-			}
+			this.shift(j, false);
 			cipherArray.push(String.fromCharCode(this._shiftResult));
 		}
+
 		return cipherArray.join('').toLocaleLowerCase();
 	}
 }
 
-const cipher = new ShiftCipher(1);
-console.log(cipher.encrypt('z'));
+const cipher = new ShiftCipher(2);
+console.log(cipher.encrypt('a'));
 console.log(cipher.decrypt('ABCDEFG'));
