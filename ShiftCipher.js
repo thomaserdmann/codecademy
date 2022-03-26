@@ -16,7 +16,6 @@
 class ShiftCipher {
 	constructor(shift) {
 		this._shift = shift;
-		this._cipherArray = [];
 	}
 
 	get shift() {
@@ -28,7 +27,7 @@ class ShiftCipher {
 	}
 
 	encrypt(string) {
-		this._cipherArray = [];
+		let cipherArray = [];
 		for (let i = 0; i < string.length; i++) {
 			let j = string.toUpperCase().charCodeAt(i);
 			if (j >= 65 && j <= 90) {
@@ -36,16 +35,16 @@ class ShiftCipher {
 				if (this._shiftResult >= 91) {
 					this._shiftResult = 64 + (this._shift - (90 - j));
 				}
-				this._cipherArray.push(String.fromCharCode(this._shiftResult));
+				cipherArray.push(String.fromCharCode(this._shiftResult));
 			} else {
-				this._cipherArray.push(String.fromCharCode(j));
+				cipherArray.push(String.fromCharCode(j));
 			}
 		}
-		return this._cipherArray.join('');
+		return cipherArray.join('');
 	}
 
 	decrypt(string) {
-		this._cipherArray = [];
+		let cipherArray = [];
 		for (let i = 0; i < string.length; i++) {
 			let j = string.toUpperCase().charCodeAt(i);
 
@@ -54,12 +53,12 @@ class ShiftCipher {
 				if (this._shiftResult < 65) {
 					this._shiftResult += 26;
 				}
-				this._cipherArray.push(String.fromCharCode(this._shiftResult));
+				cipherArray.push(String.fromCharCode(this._shiftResult));
 			} else {
-				this._cipherArray.push(String.fromCharCode(j));
+				cipherArray.push(String.fromCharCode(j));
 			}
 		}
-		return this._cipherArray.join('').toLocaleLowerCase();
+		return cipherArray.join('').toLocaleLowerCase();
 	}
 }
 
