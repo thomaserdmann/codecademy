@@ -10,7 +10,7 @@ describe('vm', () => {
 			const expected = 'Condoms';
 
 			//Exercise
-			const result = vm.getProduct(6).name;
+			const result = vm.getProduct(productNumber).name;
 
 			//Verify
 			assert.strictEqual(expected, result);
