@@ -4,7 +4,7 @@
   "description": "Function that simulates a vending machine.",
   "main": "vendingmachine.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "keywords": [
     "vendingmachine"
