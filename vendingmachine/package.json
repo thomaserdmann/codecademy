@@ -1,0 +1,14 @@
+{
+  "name": "vendingmachine",
+  "version": "0.0.1",
+  "description": "Function that simulates a vending machine.",
+  "main": "vendingmachine.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "vendingmachine"
+  ],
+  "author": "Thomas Erdmann",
+  "license": "ISC"
+}
