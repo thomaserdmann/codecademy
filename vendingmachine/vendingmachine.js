@@ -43,4 +43,7 @@ class VendingMachine {
 }
 
 const vm = new VendingMachine();
-console.log(vm.placeOrder(5, 1600));
+// console.log(vm.placeOrder(5, 1600));
+// console.log(vm.getProduct(6).name)
+
+module.exports = vm;
