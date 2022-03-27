@@ -16,4 +16,18 @@ describe('vm', () => {
 			assert.strictEqual(expected, result);
 		});
 	});
+	
+	describe('.getProduct', () => {
+		it('returns false when number is invalid', () => {
+			//Setup
+			const productNumber = 200;
+			const expected = false;
+
+			//Exercise
+			const result = vm.getProduct(productNumber);
+
+			//Verify
+			assert.strictEqual(expected, result);
+		});
+	});
 });
