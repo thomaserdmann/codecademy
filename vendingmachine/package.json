@@ -10,5 +10,8 @@
     "vendingmachine"
   ],
   "author": "Thomas Erdmann",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
 }
