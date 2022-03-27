@@ -4,7 +4,7 @@ const VendingMachine = require('../vendingmachine');
 
 describe('vm', () => {
 	describe('.getProduct', () => {
-		it('returns productname when entering number', () => {
+		it('returns productName when entering productNumber', () => {
 			//Setup
 			const productNumber = 6;
 			const expected = 'Condoms';
@@ -15,10 +15,8 @@ describe('vm', () => {
 			//Verify
 			assert.strictEqual(expected, result);
 		});
-	});
-	
-	describe('.getProduct', () => {
-		it('returns false when number is invalid', () => {
+
+		it('returns false when productNumber is invalid', () => {
 			//Setup
 			const productNumber = 200;
 			const expected = false;
