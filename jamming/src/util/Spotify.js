@@ -1,6 +1,6 @@
 //! Delete token after usage
 const clientID = '5b33657e6e5e4fd8b8b847a0eb87420c';
-const redirectUri = 'http://abashed-meeting.surge.sh';
+const redirectUri = 'http://rough-hearing.surge.sh';
 let accessToken;
 
 const Spotify = {
